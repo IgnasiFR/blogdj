@@ -26,6 +26,36 @@ STATICFILES_DIRS = [BASE_DIR.child('static')]
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR.child('media')
 
+
+#ckeditor settings
+CKEDITOR_UPLOAD_PATH = 'uploads/'
+CKEDITOR_IMAGE_BACKEND = 'pillow'
+TOR_JQUERY_URL = "https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+
+CKEDITOR_5_CONFIGS = {
+    'default': {
+        'toolbar': ['heading', '|', 'bold', 'italic', 'link',
+                    'bulletedList', 'numberedList', 'blockQuote', 'imageUpload', ],
+
+    },
+    'extends': {
+        'blockToolbar': [
+            'paragraph', 'heading1', 'heading2', 'heading3',
+            '|',
+            'bulletedList', 'numberedList',
+            '|',
+            'blockQuote',
+        ],
+        'toolbar': ['heading', '|', 'outdent', 'indent', '|', 'bold', 'italic', 'link', 'underline', 'strikethrough',
+        'code','subscript', 'superscript', 'highlight', '|', 'codeBlock', 'sourceEditing', 'insertImage',
+                    'bulletedList', 'numberedList', 'todoList', '|',  'blockQuote', 'imageUpload', '|',
+                    'fontSize', 'fontFamily', 'fontColor', 'fontBackgroundColor', 'mediaEmbed', 'removeFormat',
+                    'insertTable',],
+                }
+
+}
+
+
 # EMAIL SETTINGS
 # EMAIL_USE_TLS = True
 # EMAIL_HOST = 'smtp.gmail.com'
