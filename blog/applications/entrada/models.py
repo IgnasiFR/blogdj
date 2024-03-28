@@ -3,6 +3,8 @@ from django.conf import settings
 
 from model_utils.models import TimeStampedModel
 from django_ckeditor_5.fields import CKEditor5Field
+
+from applications.entrada.managers import EntryManager
 # Create your models here.
 
 class Category(TimeStampedModel):
@@ -46,6 +48,8 @@ class Entry(TimeStampedModel):
     portada = models.BooleanField(default=False)
     in_home = models.BooleanField(default=False)
     slug = models.SlugField(editable=False, max_length=300)
+
+    objects = EntryManager()
 
     class Meta:
         verbose_name = "Entrada"
