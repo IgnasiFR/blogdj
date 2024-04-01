@@ -9,8 +9,9 @@ class Home(TimeStampedModel):
     title = models.CharField('Nombre', max_length=50)
     description = models.TextField()
     about_title = models.CharField('Titulo Nosotros', max_length=50)
-    about_text =  models.TextField('Email de contacto', blank=True, null=True)
-    phone = models.CharField('Telefono contacto', max_length=20)
+    about_text =  models.TextField('About text', blank=True, null=True)
+    email = models.CharField('Email de contacto', max_length=20,  blank=True, null=True )
+    phone = models.CharField('Telefono de contacto', max_length=20,  blank=True, null=True)
 
     class Meta:
         verbose_name = "Pagina Principal"
