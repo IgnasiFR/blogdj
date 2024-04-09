@@ -25,7 +25,7 @@ class Home(TimeStampedModel):
 class Suscribirse(TimeStampedModel):
     """Modelo suscriptor"""
 
-    email = models.EmailField(max_length=254)
+    email = models.EmailField(max_length=254, unique=True)
 
     class Meta:
         verbose_name = "Suscriptor"
@@ -40,7 +40,7 @@ class Contact(TimeStampedModel):
     """Formulario de Contacto"""
 
     full_name = models.CharField('Nombres', max_length=60)
-    email = models.EmailField(max_length=254)
+    email = models.EmailField(max_length=254, unique=True)
     message = models.TextField()
 
 
